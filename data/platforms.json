@@ -1,0 +1,32 @@
+[
+    {
+      "name": "hotmart",
+      "slug": "hotmart",
+      "formatted_name": "Hotmart",
+      "description": "A comprehensive platform for digital products distribution and sales."
+    },
+    {
+      "name": "eduzz",
+      "slug": "eduzz",
+      "formatted_name": "Eduzz",
+      "description": "A cloud-based platform that enables creators to sell, promote, and distribute digital products."
+    },
+    {
+      "name": "braip",
+      "slug": "braip",
+      "formatted_name": "Braip",
+      "description": "A versatile platform offering services for the sale and distribution of digital and physical products."
+    },
+    {
+      "name": "perfectpay",
+      "slug": "perfectpay",
+      "formatted_name": "PerfectPay",
+      "description": "A payment solution provider specializing in effective payment processing for various businesses."
+    },
+    {
+      "name": "doppus",
+      "slug": "doppus",
+      "formatted_name": "Doppus",
+      "description": "A platform providing tools for digital content creators to monetize and manage their online presence."
+    }
+]
