@@ -1,0 +1,234 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Webhook Receiver API",
+    "version": "1.0.0",
+    "description": "API for receiving webhooks with transaction data."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local server for webhook receiver"
+    }
+  ],
+  "paths": {
+    "/webhook": {
+      "post": {
+        "summary": "Receives transaction data via a webhook",
+        "description": "Endpoint to receive transaction data from various platforms.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "createdAt": {
+                    "type": "integer",
+                    "description": "Creation time of the transaction as a UNIX timestamp in milliseconds."
+                  },
+                  "paidAt": {
+                    "type": "integer",
+                    "description": "Time when the payment was processed as a UNIX timestamp in milliseconds."
+                  },
+                  "payment": {
+                    "type": "object",
+                    "properties": {
+                      "method": {
+                        "type": "string",
+                        "description": "Method of payment."
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "Type of payment."
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "Currency used for the payment."
+                      },
+                      "value": {
+                        "type": "number",
+                        "description": "Value of the payment."
+                      }
+                    },
+                    "description": "Payment details."
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "Current status of the transaction."
+                  },
+                  "platform": {
+                    "type": "string",
+                    "description": "Platform through which the transaction was made."
+                  },
+                  "product": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "integer",
+                        "description": "Product code identifier."
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the product."
+                      }
+                    },
+                    "description": "Details of the product involved in the transaction."
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "Unique transaction code."
+                  },
+                  "refusalReason": {
+                    "type": "string",
+                    "description": "Reason for refusal if the transaction was not approved."
+                  },
+                  "pix": {
+                    "type": "object",
+                    "properties": {
+                      "qrcode": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "QR code for PIX payment."
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "URL for PIX payment."
+                      }
+                    },
+                    "description": "PIX payment details."
+                  },
+                  "billet": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "URL to access the billet."
+                      },
+                      "code": {
+                        "type": "string",
+                        "description": "Barcode of the billet."
+                      }
+                    },
+                    "description": "Billet payment details."
+                  },
+                  "customer": {
+                    "type": "object",
+                    "properties": {
+                      "fullName": {
+                        "type": "string",
+                        "description": "Full name of the customer."
+                      },
+                      "email": {
+                        "type": "string",
+                        "format": "email",
+                        "description": "Email address of the customer."
+                      },
+                      "mobilePhone": {
+                        "type": "string",
+                        "description": "Mobile phone number of the customer."
+                      },
+                      "address": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string",
+                            "description": "Street address of the customer."
+                          },
+                          "number": {
+                            "type": "string",
+                            "description": "Street number of the customer's address."
+                          },
+                          "complement": {
+                            "type": "string",
+                            "description": "Address complement."
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "City of the customer's address."
+                          },
+                          "state": {
+                            "type": "string",
+                            "description": "State of the customer's address."
+                          },
+                          "country": {
+                            "type": "string",
+                            "description": "Country of the customer's address."
+                          }
+                        },
+                        "description": "Address details of the customer."
+                      }
+                    },
+                    "description": "Customer details."
+                  },
+                  "tracking": {
+                    "type": "object",
+                    "properties": {
+                      "utm_campaign": {
+                        "type": "string",
+                        "description": "Campaign name for tracking."
+                      },
+                      "utm_medium": {
+                        "type": "string",
+                        "description": "Medium of the campaign."
+                      },
+                      "utm_term": {
+                        "type": "string",
+                        "description": "Terms of the campaign."
+                      },
+                      "utm_source": {
+                        "type": "string",
+                        "description": "Source of the campaign."
+                      },
+                      "src": {
+                        "type": "string",
+                        "description": "General source tracking parameter."
+                      },
+                      "sck": {
+                        "type": "string",
+                        "description": "Specific tracking parameter."
+                      }
+                    },
+                    "description": "Tracking parameters for the transaction."
+                  },
+                  "plan": {
+                    "type": "object",
+                    "properties": {
+                      "code": {
+                        "type": "string",
+                        "description": "Plan code identifier."
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the plan."
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "Currency of the plan."
+                      },
+                      "value": {
+                        "type": "number",
+                        "description": "Value of the plan."
+                      }
+                    },
+                    "description": "Plan details associated with the transaction."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook received successfully."
+          },
+          "400": {
+            "description": "Invalid request."
+          }
+        }
+      }
+    }
+  }
+}

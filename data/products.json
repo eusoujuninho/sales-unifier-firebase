@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Oração de 1 minuto",
+    "slug": "oracao",
+    "description": "",
+    "externalIds": [
+      {
+        "id": "PPPB9AAQ",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "85677",
+        "platform": "doppus"
+      }
+    ]
+  }
+]

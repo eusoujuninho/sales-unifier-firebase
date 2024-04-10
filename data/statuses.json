@@ -1,0 +1,302 @@
+[
+  {
+    "name": "none",
+    "slug": "none",
+    "description": "No status",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "none",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "STARTED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "pending",
+    "slug": "pending",
+    "description": "Pending payment",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "pending",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "WAITING_PAYMENT",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "approved",
+    "slug": "approved",
+    "description": "Payment approved",
+    "financialImpact": "credito",
+    "externalIds": [
+      {
+        "id": "approved",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "APPROVED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "in_process",
+    "slug": "in_process",
+    "description": "Payment in manual review",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "in_process",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "PROCESSING_TRANSACTION",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "in_mediation",
+    "slug": "in_mediation",
+    "description": "Payment in mediation",
+    "financialImpact": "congelado",
+    "externalIds": [
+      {
+        "id": "in_mediation",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "BLOCKED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "rejected",
+    "slug": "rejected",
+    "description": "Payment rejected",
+    "financialImpact": "debito",
+    "externalIds": [
+      {
+        "id": "rejected",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "CANCELLED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "cancelled",
+    "slug": "cancelled",
+    "description": "Payment cancelled",
+    "financialImpact": "debito",
+    "externalIds": [
+      {
+        "id": "cancelled",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "CANCELLED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "refunded",
+    "slug": "refunded",
+    "description": "Payment refunded",
+    "financialImpact": "debito",
+    "externalIds": [
+      {
+        "id": "refunded",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "REFUNDED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "authorized",
+    "slug": "authorized",
+    "description": "Payment authorized",
+    "financialImpact": "credito",
+    "externalIds": [
+      {
+        "id": "authorized",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "APPROVED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "charged_back",
+    "slug": "charged_back",
+    "description": "Chargeback requested",
+    "financialImpact": "debito",
+    "externalIds": [
+      {
+        "id": "charged_back",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "CHARGEBACK",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "completed",
+    "slug": "completed",
+    "description": "Sale completed after 30 days",
+    "financialImpact": "credito",
+    "externalIds": [
+      {
+        "id": "completed",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "COMPLETE",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "checkout_error",
+    "slug": "checkout_error",
+    "description": "Error during checkout",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "checkout_error",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "OVERDUE",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "precheckout",
+    "slug": "precheckout",
+    "description": "Abandoned before checkout",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "precheckout",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "PRINTED_BILLET",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "expired",
+    "slug": "expired",
+    "description": "Boleto expired",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "expired",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "EXPIRED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "in_review",
+    "slug": "in_review",
+    "description": "Under review",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "in_review",
+        "platform": "perfectpay"
+      },
+      {
+        "id": "UNDER_ANALISYS",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "no_funds",
+    "slug": "no_funds",
+    "description": "No funds available",
+    "financialImpact": "debito",
+    "externalIds": [
+      {
+        "id": "NO_FUNDS",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "overdue",
+    "slug": "overdue",
+    "description": "Payment overdue",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "OVERDUE",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "partially_refunded",
+    "slug": "partially_refunded",
+    "description": "Partially refunded payment",
+    "financialImpact": "debito",
+    "externalIds": [
+      {
+        "id": "PARTIALLY_REFUNDED",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "pre_order",
+    "slug": "pre_order",
+    "description": "Pre-order status",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "PRE_ORDER",
+        "platform": "hotmart"
+      }
+    ]
+  },
+  {
+    "name": "protested",
+    "slug": "protested",
+    "description": "Protested payment",
+    "financialImpact": "neutro",
+    "externalIds": [
+      {
+        "id": "PROTESTED",
+        "platform": "hotmart"
+      }
+    ]
+  }
+]

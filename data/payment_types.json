@@ -1,0 +1,170 @@
+[
+  {
+    "name": "none",
+    "slug": "none",
+    "description": "No payment method",
+    "instant": false,
+    "externalIds": [
+      { "id": "none", "platform": "perfectpay" },
+      { "id": "none", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "credit_card",
+    "slug": "credit_card",
+    "description": "Payment made with a credit card",
+    "instant": true,
+    "externalIds": [
+      { "id": "credit_card", "platform": "perfectpay" },
+      { "id": "CREDIT_CARD", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "ticket",
+    "slug": "ticket",
+    "description": "Boleto bancário, a bank slip payment method",
+    "instant": false,
+    "externalIds": [
+      { "id": "ticket", "platform": "perfectpay" },
+      { "id": "BILLET", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "paypal",
+    "slug": "paypal",
+    "description": "Payment made through PayPal",
+    "instant": true,
+    "externalIds": [
+      { "id": "paypal", "platform": "perfectpay" },
+      { "id": "PAYPAL", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "credit_card_recurrent",
+    "slug": "credit_card_recurrent",
+    "description": "Recurrent payment with a credit card",
+    "instant": true,
+    "externalIds": [
+      { "id": "credit_card_recurrent", "platform": "perfectpay" },
+      { "id": "CREDIT_CARD", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "free_price",
+    "slug": "free_price",
+    "description": "Free pricing option, no payment involved",
+    "instant": true,
+    "externalIds": [
+      { "id": "free_price", "platform": "perfectpay" },
+      { "id": "FREE_PRICE", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "credit_card_upsell",
+    "slug": "credit_card_upsell",
+    "description": "Upsell with a credit card payment",
+    "instant": true,
+    "externalIds": [
+      { "id": "credit_card_upsell", "platform": "perfectpay" },
+      { "id": "CREDIT_CARD_UPSELL", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "cash_payment",
+    "slug": "cash_payment",
+    "description": "Payment made in cash",
+    "instant": false,
+    "externalIds": [{ "id": "CASH_PAYMENT", "platform": "hotmart" }]
+  },
+  {
+    "name": "direct_bank_transfer",
+    "slug": "direct_bank_transfer",
+    "description": "Payment made via direct bank transfer",
+    "instant": false,
+    "externalIds": [{ "id": "DIRECT_BANK_TRANSFER", "platform": "hotmart" }]
+  },
+  {
+    "name": "direct_debit",
+    "slug": "direct_debit",
+    "description": "Payment made via direct debit from a bank account",
+    "instant": false,
+    "externalIds": [{ "id": "DIRECT_DEBIT", "platform": "hotmart" }]
+  },
+  {
+    "name": "financed_billet",
+    "slug": "financed_billet",
+    "description": "Boleto bancário with financing option",
+    "instant": false,
+    "externalIds": [{ "id": "FINANCED_BILLET", "platform": "hotmart" }]
+  },
+  {
+    "name": "financed_installment",
+    "slug": "financed_installment",
+    "description": "Installment payment that is financed",
+    "instant": false,
+    "externalIds": [{ "id": "FINANCED_INSTALLMENT", "platform": "hotmart" }]
+  },
+  {
+    "name": "google_pay",
+    "slug": "google_pay",
+    "description": "Payment made via Google Pay",
+    "instant": true,
+    "externalIds": [{ "id": "GOOGLE_PAY", "platform": "hotmart" }]
+  },
+  {
+    "name": "hotcard",
+    "slug": "hotcard",
+    "description": "Exclusive payment card from Hotmart",
+    "instant": true,
+    "externalIds": [{ "id": "HOTCARD", "platform": "hotmart" }]
+  },
+  {
+    "name": "hybrid",
+    "slug": "hybrid",
+    "description": "Combination of payment methods",
+    "instant": false,
+    "externalIds": [{ "id": "HYBRID", "platform": "hotmart" }]
+  },
+  {
+    "name": "manual_transfer",
+    "slug": "manual_transfer",
+    "description": "Payment made via manual bank transfer",
+    "instant": false,
+    "externalIds": [{ "id": "MANUAL_TRANSFER", "platform": "hotmart" }]
+  },
+  {
+    "name": "paypal_international",
+    "slug": "paypal_international",
+    "description": "International PayPal payment",
+    "instant": true,
+    "externalIds": [{ "id": "PAYPAL_INTERNACIONAL", "platform": "hotmart" }]
+  },
+  {
+    "name": "picpay",
+    "slug": "picpay",
+    "description": "Payment made via PicPay",
+    "instant": true,
+    "externalIds": [{ "id": "PICPAY", "platform": "hotmart" }]
+  },
+  {
+    "name": "pix",
+    "slug": "pix",
+    "description": "Payment made via Pix (instant payment in Brazil)",
+    "instant": true,
+    "externalIds": [{ "id": "PIX", "platform": "hotmart" }]
+  },
+  {
+    "name": "samsung_pay",
+    "slug": "samsung_pay",
+    "description": "Payment made via Samsung Pay",
+    "instant": true,
+    "externalIds": [{ "id": "SAMSUNG_PAY", "platform": "hotmart" }]
+  },
+  {
+    "name": "wallet",
+    "slug": "wallet",
+    "description": "Payment made from a digital wallet",
+    "instant": true,
+    "externalIds": [{ "id": "WALLET", "platform": "hotmart" }]
+  }
+]

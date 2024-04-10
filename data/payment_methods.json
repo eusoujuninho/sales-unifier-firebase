@@ -1,0 +1,255 @@
+[
+  {
+    "name": "none",
+    "slug": "none",
+    "description": "No payment method",
+    "externalIds": [
+      {
+        "id": "none",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "visa",
+    "slug": "visa",
+    "description": "Visa credit card",
+    "externalIds": [
+      {
+        "id": "visa",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "bolbradesco",
+    "slug": "bolbradesco",
+    "description": "Boleto Bradesco",
+    "externalIds": [
+      {
+        "id": "bolbradesco",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "amex",
+    "slug": "amex",
+    "description": "American Express credit card",
+    "externalIds": [
+      {
+        "id": "amex",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "elo",
+    "slug": "elo",
+    "description": "Elo credit card",
+    "externalIds": [
+      {
+        "id": "elo",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "hipercard",
+    "slug": "hipercard",
+    "description": "Hipercard credit card",
+    "externalIds": [
+      {
+        "id": "hipercard",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "master",
+    "slug": "master",
+    "description": "Mastercard credit card",
+    "externalIds": [
+      {
+        "id": "master",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "melicard",
+    "slug": "melicard",
+    "description": "Mercado Livres Melicard",
+    "externalIds": [
+      {
+        "id": "melicard",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "free_price",
+    "slug": "free_price",
+    "description": "Free pricing option",
+    "externalIds": [
+      {
+        "id": "free_price",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "oxxo",
+    "slug": "oxxo",
+    "description": "OXXO payment method for Mexico",
+    "externalIds": [
+      {
+        "id": "oxxo",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "multibanco",
+    "slug": "multibanco",
+    "description": "Multibanco payment method for Portugal",
+    "externalIds": [
+      {
+        "id": "multibanco",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "sencillito",
+    "slug": "sencillito",
+    "description": "Sencillito payment method for Chile",
+    "externalIds": [
+      {
+        "id": "sencillito",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "pagoefectivo",
+    "slug": "pagoefectivo",
+    "description": "PagoEfectivo payment method for Peru",
+    "externalIds": [
+      {
+        "id": "pagoefectivo",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "cupondepago",
+    "slug": "cupondepago",
+    "description": "Cupón de Pago payment method for Argentina",
+    "externalIds": [
+      {
+        "id": "cupondepago",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "efecty",
+    "slug": "efecty",
+    "description": "Efecty payment method for Colombia",
+    "externalIds": [
+      {
+        "id": "efecty",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "sepa",
+    "slug": "sepa",
+    "description": "SEPA Direct Debit for the European Union",
+    "externalIds": [
+      {
+        "id": "sepa",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "pse",
+    "slug": "pse",
+    "description": "PSE payment method for Colombia",
+    "externalIds": [
+      {
+        "id": "pse",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "bacs",
+    "slug": "bacs",
+    "description": "BACS Direct Debit for the United Kingdom",
+    "externalIds": [
+      {
+        "id": "bacs",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "debito_bancario",
+    "slug": "debito_bancario",
+    "description": "Bank Debit in Brazil",
+    "externalIds": [
+      {
+        "id": "debito_bancario",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "tarjeta_debito",
+    "slug": "tarjeta_debito",
+    "description": "Debit card payment in Mexico",
+    "externalIds": [
+      {
+        "id": "tarjeta_debito",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "mastercard_int",
+    "slug": "mastercard_int",
+    "description": "Mastercard for Europe, USA, Canada, and Asia",
+    "externalIds": [
+      {
+        "id": "mastercard_int",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "visa_int",
+    "slug": "visa_int",
+    "description": "Visa for Europe, USA, Canada, and Asia",
+    "externalIds": [
+      {
+        "id": "visa_int",
+        "platform": "perfectpay"
+      }
+    ]
+  },
+  {
+    "name": "cartes_bancaires",
+    "slug": "cartes_bancaires",
+    "description": "Cartes Bancaires payment method in France",
+    "externalIds": [
+      {
+        "id": "cartes_bancaires",
+        "platform": "perfectpay"
+      }
+    ]
+  }
+]
