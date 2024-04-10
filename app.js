@@ -20,6 +20,32 @@ async function ensureDocumentExists(collection, queryField, name, slug) {
   }
 }
 
+async function ensurePaymentTypeExists(name, slug) {
+    const snapshot = await db.collection('PaymentTypes')
+                             .where('name', '==', name)
+                             .limit(1)
+                             .get();
+    if (snapshot.empty) {
+      const ref = await db.collection('PaymentTypes').add({ name, slug });
+      return ref;
+    } else {
+      return snapshot.docs[0].ref;
+    }
+  }
+
+async function getDocumentByExternalId(collection, externalId, platform) {
+    const snapshot = await db.collection(collection)
+                             .where('externalIds', 'array-contains', { id: externalId, platform: platform })
+                             .limit(1)
+                             .get();
+    if (!snapshot.empty) {
+      return snapshot.docs[0].data(); // Retorna os dados do documento encontrado
+    } else {
+      console.error(`No document found for externalId: ${externalId} on platform: ${platform}`);
+      return null; // Ou lança um erro, se preferir
+    }
+  }
+  
 
 async function fetchExchangeRate(fromCurrency, toCurrency) {
     try {
@@ -32,12 +58,27 @@ async function fetchExchangeRate(fromCurrency, toCurrency) {
     }
   }
 
-async function insertMockData() {
+  async function ensurePaymentMethodExists(name, slug) {
+    const snapshot = await db.collection('PaymentMethods')
+                             .where('name', '==', name)
+                             .limit(1)
+                             .get();
+    if (snapshot.empty) {
+      const ref = await db.collection('PaymentMethods').add({ name, slug });
+      return ref;
+    } else {
+      return snapshot.docs[0].ref;
+    }
+  }
+  
+
+async function insertMockData(receivedData) {
   // Assegura a existência de PaymentMethod, PaymentType, Product, Platform e Status
-  const paymentMethodRef = await ensureDocumentExists('PaymentMethods', 'name', 'visa', 'visa');
-  const paymentTypeRef = await ensureDocumentExists('PaymentTypes', 'name', 'credit_card', 'credit-card');
+  const paymentMethodRef = await ensurePaymentMethodExists('visa', 'visa');
+  const paymentTypeRef = await ensurePaymentTypeExists('credit_card', 'credit-card');
   const productRef = await ensureDocumentExists('Products', 'name', 'Online Course', 'online-course');
   const platformRef = await ensureDocumentExists('Platforms', 'name', 'Digital Market', 'digital-market');
+  const statusData = await getDocumentByExternalId('Statuses', receivedData.statusExternalId, receivedData.platform);
   const statusRef = await ensureDocumentExists('Statuses', 'name', 'approved', 'approved');
 
   const exchangeRates = {
@@ -106,4 +147,11 @@ async function insertMockData() {
 
 // initializeDefaultData().catch(console.error);
 
-insertMockData().catch(console.error);
+const receivedData = {
+    paymentMethodExternalId: 'hybrid',
+    paymentTypeExternalId: 'credit_card',
+    statusExternalId: 'approved',
+    platform: 'qTwo4mJsBqn5x1POTdZR' // Supondo que este seja o ID da plataforma 'perfectpay'
+};
+
+insertMockData(receivedData).catch(console.error);
