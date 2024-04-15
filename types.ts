@@ -62,6 +62,7 @@ interface Tracking {
 interface Transaction {
     createdAt: number; // timestamp
     paidAt: number; // timestamp
+    parentTransaction?: string;
     payment: Payment;
     currency: string;
     amount: number;
