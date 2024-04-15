@@ -1,0 +1,411 @@
+---
+swagger: "2.0"
+info:
+  description: "API endpoint for receiving webhook calls to create transaction records."
+  version: "1.0.0"
+  title: "Webhook Transaction API"
+host: "api.yourdomain.com"
+basePath: "/v1"
+schemes:
+- "https"
+- "http"
+paths:
+  /webhook:
+    post:
+      summary: "Create a transaction via webhook"
+      description: "Create a new transaction based on the data received from a webhook\
+        \ call."
+      operationId: "webhookPOST"
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "transaction"
+        description: "Transaction data received from the webhook."
+        required: true
+        schema:
+          $ref: "#/definitions/Transaction"
+      responses:
+        "201":
+          description: "Transaction created successfully"
+        "400":
+          description: "Invalid transaction data provided"
+        "500":
+          description: "Internal server error"
+      x-swagger-router-controller: "Default"
+definitions:
+  Transaction:
+    type: "object"
+    required:
+    - "amount"
+    - "amountToBrl"
+    - "code"
+    - "comissions"
+    - "createdAt"
+    - "currency"
+    - "customer"
+    - "offer"
+    - "paidAt"
+    - "payment"
+    - "platform"
+    - "product"
+    - "status"
+    properties:
+      createdAt:
+        type: "integer"
+        format: "int64"
+        description: "Timestamp of creation"
+      paidAt:
+        type: "integer"
+        format: "int64"
+        description: "Timestamp of payment"
+      payment:
+        $ref: "#/definitions/Payment"
+      currency:
+        type: "string"
+      amount:
+        type: "number"
+        format: "double"
+      amountToBrl:
+        type: "number"
+        format: "double"
+      status:
+        type: "string"
+        enum:
+        - "none"
+        - "pending"
+        - "approved"
+        - "in_process"
+        - "in_mediation"
+        - "rejected"
+        - "cancelled"
+        - "refunded"
+        - "authorized"
+        - "charged_back"
+        - "completed"
+        - "checkout_error"
+        - "precheckout"
+        - "expired"
+        - "in_review"
+        - "no_funds"
+        - "overdue"
+        - "pre_order"
+      platform:
+        type: "string"
+        enum:
+        - "hotmart"
+        - "kiwify"
+        - "eduzz"
+        - "braip"
+        - "doppus"
+      code:
+        type: "string"
+      product:
+        $ref: "#/definitions/Product"
+      offer:
+        $ref: "#/definitions/Offer"
+      comissions:
+        type: "array"
+        items:
+          $ref: "#/definitions/Commission"
+      customer:
+        $ref: "#/definitions/Customer"
+      tracking:
+        $ref: "#/definitions/Tracking"
+    example:
+      amount: 7.061401241503109105224211816675961017608642578125
+      product:
+        code: "code"
+        name: "name"
+      code: "code"
+      tracking:
+        utm_term: "utm_term"
+        utm_campaign: "utm_campaign"
+        src: "src"
+        utm_medium: "utm_medium"
+        sck: "sck"
+        utm_source: "utm_source"
+      platform: "hotmart"
+      offer:
+        amount: 3.61607674925191080461672754609026014804840087890625
+        code: "code"
+        name: "name"
+        currency: "currency"
+        amountToBrl: 2.027123023002321833274663731572218239307403564453125
+      createdAt: 0
+      comissions:
+      - amount: 4.1456080298839363962315474054776132106781005859375
+        currency: "currency"
+        type: "type"
+        amountToBrl: 7.3862819483858839220147274318151175975799560546875
+      - amount: 4.1456080298839363962315474054776132106781005859375
+        currency: "currency"
+        type: "type"
+        amountToBrl: 7.3862819483858839220147274318151175975799560546875
+      paidAt: 6
+      payment:
+        amount: 1.46581298050294517310021547018550336360931396484375
+        method: "none"
+        installments:
+          amount: 2.3021358869347654518833223846741020679473876953125
+          quantity: 5
+        currency: "currency"
+        type: "type"
+        amountToBrl: 5.962133916683182377482808078639209270477294921875
+      currency: "currency"
+      amountToBrl: 9.301444243932575517419536481611430644989013671875
+      status: "none"
+      customer:
+        facebookUrl: "facebookUrl"
+        address:
+          number: "number"
+          country: "country"
+          address: "address"
+          city: "city"
+          state: "state"
+          complement: "complement"
+        mobilePhone: "mobilePhone"
+        fullName: "fullName"
+        instagramUrl: "instagramUrl"
+        email: "email"
+  Payment:
+    type: "object"
+    required:
+    - "amount"
+    - "amountToBrl"
+    - "currency"
+    - "installments"
+    - "method"
+    - "type"
+    properties:
+      method:
+        type: "string"
+        enum:
+        - "none"
+        - "visa"
+        - "bolbradesco"
+        - "amex"
+        - "elo"
+        - "hipercard"
+        - "master"
+        - "melicard"
+        - "free_price"
+        - "oxxo"
+        - "multibanco"
+        - "sencilitto"
+        - "pagoefectivo"
+        - "cupondepago"
+        - "efecty"
+        - "sepa"
+        - "pse"
+        - "bacs"
+        - "debito_bancario"
+        - "tarjeta_debito"
+        - "mastercard_int"
+        - "visa_int"
+        - "cartes_bancaires"
+      type:
+        type: "string"
+      currency:
+        type: "string"
+      amount:
+        type: "number"
+        format: "double"
+      amountToBrl:
+        type: "number"
+        format: "double"
+      installments:
+        $ref: "#/definitions/Installments"
+    example:
+      amount: 1.46581298050294517310021547018550336360931396484375
+      method: "none"
+      installments:
+        amount: 2.3021358869347654518833223846741020679473876953125
+        quantity: 5
+      currency: "currency"
+      type: "type"
+      amountToBrl: 5.962133916683182377482808078639209270477294921875
+  Installments:
+    type: "object"
+    required:
+    - "amount"
+    - "quantity"
+    properties:
+      quantity:
+        type: "integer"
+        format: "int32"
+        description: "Number of installments"
+      amount:
+        type: "number"
+        format: "double"
+        description: "Amount per installment"
+    example:
+      amount: 2.3021358869347654518833223846741020679473876953125
+      quantity: 5
+  Product:
+    type: "object"
+    required:
+    - "code"
+    - "name"
+    properties:
+      name:
+        type: "string"
+        description: "Product name"
+      code:
+        type: "string"
+        description: "Product code"
+    example:
+      code: "code"
+      name: "name"
+  Offer:
+    type: "object"
+    required:
+    - "amount"
+    - "amountToBrl"
+    - "code"
+    - "currency"
+    - "name"
+    properties:
+      name:
+        type: "string"
+        description: "Offer name"
+      code:
+        type: "string"
+        description: "Offer code"
+      currency:
+        type: "string"
+        description: "Currency of the offer"
+      amount:
+        type: "number"
+        format: "double"
+        description: "Amount of the offer"
+      amountToBrl:
+        type: "number"
+        format: "double"
+        description: "Amount converted to Brazilian Real"
+    example:
+      amount: 3.61607674925191080461672754609026014804840087890625
+      code: "code"
+      name: "name"
+      currency: "currency"
+      amountToBrl: 2.027123023002321833274663731572218239307403564453125
+  Commission:
+    type: "object"
+    required:
+    - "amount"
+    - "amountToBrl"
+    - "currency"
+    - "type"
+    properties:
+      type:
+        type: "string"
+        description: "Type of commission"
+      currency:
+        type: "string"
+        description: "Currency of the commission"
+      amount:
+        type: "number"
+        format: "double"
+        description: "Amount of the commission"
+      amountToBrl:
+        type: "number"
+        format: "double"
+        description: "Amount of the commission converted to Brazilian Real"
+    example:
+      amount: 4.1456080298839363962315474054776132106781005859375
+      currency: "currency"
+      type: "type"
+      amountToBrl: 7.3862819483858839220147274318151175975799560546875
+  Customer:
+    type: "object"
+    required:
+    - "email"
+    - "fullName"
+    - "mobilePhone"
+    properties:
+      fullName:
+        type: "string"
+        description: "Full name of the customer"
+      email:
+        type: "string"
+        description: "Email address of the customer"
+      mobilePhone:
+        type: "string"
+        description: "Mobile phone number of the customer"
+      address:
+        $ref: "#/definitions/Address"
+      facebookUrl:
+        type: "string"
+        description: "Facebook URL of the customer"
+      instagramUrl:
+        type: "string"
+        description: "Instagram URL of the customer"
+    example:
+      facebookUrl: "facebookUrl"
+      address:
+        number: "number"
+        country: "country"
+        address: "address"
+        city: "city"
+        state: "state"
+        complement: "complement"
+      mobilePhone: "mobilePhone"
+      fullName: "fullName"
+      instagramUrl: "instagramUrl"
+      email: "email"
+  Address:
+    type: "object"
+    properties:
+      address:
+        type: "string"
+        description: "Street address"
+      number:
+        type: "string"
+        description: "House or building number"
+      complement:
+        type: "string"
+        description: "Additional addressing information"
+      city:
+        type: "string"
+        description: "City"
+      state:
+        type: "string"
+        description: "State or province"
+      country:
+        type: "string"
+        description: "Country"
+    example:
+      number: "number"
+      country: "country"
+      address: "address"
+      city: "city"
+      state: "state"
+      complement: "complement"
+  Tracking:
+    type: "object"
+    properties:
+      utm_campaign:
+        type: "string"
+        description: "UTM campaign parameter"
+      utm_medium:
+        type: "string"
+        description: "UTM medium parameter"
+      utm_term:
+        type: "string"
+        description: "UTM term parameter"
+      utm_source:
+        type: "string"
+        description: "UTM source parameter"
+      src:
+        type: "string"
+        description: "Source parameter"
+      sck:
+        type: "string"
+        description: "Subclick parameter"
+    example:
+      utm_term: "utm_term"
+      utm_campaign: "utm_campaign"
+      src: "src"
+      utm_medium: "utm_medium"
+      sck: "sck"
+      utm_source: "utm_source"

@@ -1,0 +1,298 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'Webhook Transaction API'
+  description: API endpoint for receiving webhook calls to create transaction records.
+host: 'api.yourdomain.com'
+basePath: '/v1'
+schemes:
+  - https
+  - http
+paths:
+  /webhook:
+    post:
+      summary: 'Create a transaction via webhook'
+      description: 'Create a new transaction based on the data received from a webhook call.'
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: transaction
+          description: 'Transaction data received from the webhook.'
+          required: true
+          schema:
+            $ref: '#/definitions/Transaction'
+      responses:
+        201:
+          description: 'Transaction created successfully'
+        400:
+          description: 'Invalid transaction data provided'
+        500:
+          description: 'Internal server error'
+definitions:
+  Transaction:
+    type: object
+    required:
+      - createdAt
+      - paidAt
+      - payment
+      - currency
+      - amount
+      - amountToBrl
+      - status
+      - platform
+      - code
+      - product
+      - offer
+      - comissions
+      - customer
+    properties:
+      createdAt:
+        type: integer
+        format: int64
+        description: 'Timestamp of creation'
+      paidAt:
+        type: integer
+        format: int64
+        description: 'Timestamp of payment'
+      payment:
+        $ref: '#/definitions/Payment'
+      currency:
+        type: string
+      amount:
+        type: number
+        format: double
+      amountToBrl:
+        type: number
+        format: double
+      status:
+        type: string
+        enum:
+          - none
+          - pending
+          - approved
+          - in_process
+          - in_mediation
+          - rejected
+          - cancelled
+          - refunded
+          - authorized
+          - charged_back
+          - completed
+          - checkout_error
+          - precheckout
+          - expired
+          - in_review
+          - no_funds
+          - overdue
+          - pre_order
+      platform:
+        type: string
+        enum:
+          - hotmart
+          - kiwify
+          - eduzz
+          - braip
+          - doppus
+      code:
+        type: string
+      product:
+        $ref: '#/definitions/Product'
+      offer:
+        $ref: '#/definitions/Offer'
+      comissions:
+        type: array
+        items:
+          $ref: '#/definitions/Commission'
+      customer:
+        $ref: '#/definitions/Customer'
+      tracking:
+        $ref: '#/definitions/Tracking'
+  Payment:
+    type: object
+    required:
+      - method
+      - type
+      - currency
+      - amount
+      - amountToBrl
+      - installments
+    properties:
+      method:
+        type: string
+        enum:
+          - none
+          - visa
+          - bolbradesco
+          - amex
+          - elo
+          - hipercard
+          - master
+          - melicard
+          - free_price
+          - oxxo
+          - multibanco
+          - sencilitto
+          - pagoefectivo
+          - cupondepago
+          - efecty
+          - sepa
+          - pse
+          - bacs
+          - debito_bancario
+          - tarjeta_debito
+          - mastercard_int
+          - visa_int
+          - cartes_bancaires
+      type:
+        type: string
+      currency:
+        type: string
+      amount:
+        type: number
+        format: double
+      amountToBrl:
+        type: number
+        format: double
+      installments:
+        $ref: '#/definitions/Installments'
+  Installments:
+    type: object
+    required:
+      - quantity
+      - amount
+    properties:
+      quantity:
+        type: integer
+        format: int32
+        description: 'Number of installments'
+      amount:
+        type: number
+        format: double
+        description: 'Amount per installment'
+  Product:
+    type: object
+    required:
+      - name
+      - code
+    properties:
+      name:
+        type: string
+        description: 'Product name'
+      code:
+        type: string
+        description: 'Product code'
+  Offer:
+    type: object
+    required:
+      - name
+      - code
+      - currency
+      - amount
+      - amountToBrl
+    properties:
+      name:
+        type: string
+        description: 'Offer name'
+      code:
+        type: string
+        description: 'Offer code'
+      currency:
+        type: string
+        description: 'Currency of the offer'
+      amount:
+        type: number
+        format: double
+        description: 'Amount of the offer'
+      amountToBrl:
+        type: number
+        format: double
+        description: 'Amount converted to Brazilian Real'
+  Commission:
+    type: object
+    required:
+      - type
+      - currency
+      - amount
+      - amountToBrl
+    properties:
+      type:
+        type: string
+        description: 'Type of commission'
+      currency:
+        type: string
+        description: 'Currency of the commission'
+      amount:
+        type: number
+        format: double
+        description: 'Amount of the commission'
+      amountToBrl:
+        type: number
+        format: double
+        description: 'Amount of the commission converted to Brazilian Real'
+  Customer:
+    type: object
+    required:
+      - fullName
+      - email
+      - mobilePhone
+    properties:
+      fullName:
+        type: string
+        description: 'Full name of the customer'
+      email:
+        type: string
+        description: 'Email address of the customer'
+      mobilePhone:
+        type: string
+        description: 'Mobile phone number of the customer'
+      address:
+        $ref: '#/definitions/Address'
+      facebookUrl:
+        type: string
+        description: 'Facebook URL of the customer'
+      instagramUrl:
+        type: string
+        description: 'Instagram URL of the customer'
+  Address:
+    type: object
+    properties:
+      address:
+        type: string
+        description: 'Street address'
+      number:
+        type: string
+        description: 'House or building number'
+      complement:
+        type: string
+        description: 'Additional addressing information'
+      city:
+        type: string
+        description: 'City'
+      state:
+        type: string
+        description: 'State or province'
+      country:
+        type: string
+        description: 'Country'
+  Tracking:
+    type: object
+    properties:
+      utm_campaign:
+        type: string
+        description: 'UTM campaign parameter'
+      utm_medium:
+        type: string
+        description: 'UTM medium parameter'
+      utm_term:
+        type: string
+        description: 'UTM term parameter'
+      utm_source:
+        type: string
+        description: 'UTM source parameter'
+      src:
+        type: string
+        description: 'Source parameter'
+      sck:
+        type: string
+        description: 'Subclick parameter'

@@ -1,19 +1,20 @@
 {
-  "name": "nodejs",
+  "name": "webhook-transaction-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API endpoint for receiving webhook calls to create transaction records.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"prestart": "npm install",
+	"start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
   "dependencies": {
-    "@types/node": "^18.0.6",
-    "express": "^4.19.2",
-    "firebase-admin": "^12.0.0",
-    "node-fetch": "^3.3.2",
-    "swagger-ui-express": "^5.0.0"
+    "connect": "^3.2.0",
+    "js-yaml": "^3.3.0",
+    "swagger-tools": "0.10.1"
   }
 }
