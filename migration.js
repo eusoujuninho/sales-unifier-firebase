@@ -52,6 +52,7 @@ async function initializeDefaultData() {
   const platforms = await readJsonFile("./data/platforms.json");
   const paymentMethods = await readJsonFile("./data/payment_methods.json");
   const paymentTypes = await readJsonFile("./data/payment_types.json");
+  const comissionTypes = await readJsonFile("./data/comission_types.json");
   const statuses = await readJsonFile("./data/statuses.json");
   const products = await readJsonFile("./data/products.json");
 
@@ -77,6 +78,10 @@ async function initializeDefaultData() {
 
   for (const product of products) {
     await ensureDocumentExists("Products", "slug", product.name, product);
+  }
+
+  for(const comissionType of comissionTypes) {
+    await ensureDocumentExists("Comission Types", "slug", comissionType.name, comissionType);
   }
 
   console.log("Default data initialization complete.");

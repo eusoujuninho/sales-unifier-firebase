@@ -10,14 +10,40 @@ async function insertTransaction(transactionData) {
 async function mockWebhookRequest() {
   // Aqui você simularia os dados recebidos de um webhook
   const webhookData = {
-    paymentMethod: "visa",
-    paymentType: "credit_card",
-    status: "approved",
-    platform: "perfectpay",
     createdAt: "",
     paidAt: "",
-    productId: 1,
+    payment: {
+      method: "",
+      type: "",
+      currency: "",
+      amount: "",
+      installments: {
+        quantity: 1,
+        amount: 1
+      }
+    },
+    currency: "BRL",
+    amount: 100,
+    status: "approved",
+    platform: "perfectpay",
     code: "",
+    product: {
+      name: "",
+      code: ""
+    },
+    offer: {
+      name: "",
+      code: "",
+      currency: "",
+      amount: ""
+    },
+    comissions: [
+      {
+        type: "producer",
+        currency: "BRL",
+        amount: 20
+      }
+    ],
     customer: {
       fullName: "",
       email: "",

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Produtor",
+    "slug": "producer",
+    "externalIds": [
+      { "id": "1", "platform": "perfectpay" },
+      { "id": "producer", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "Partner",
+    "slug": "parceiro",
+    "externalIds": [
+      { "id": "4", "platform": "perfectpay" },
+      { "id": "partner", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "Co-produtor",
+    "slug": "coproducer",
+    "externalIds": [
+      { "id": "2", "platform": "perfectpay" },
+      { "id": "coproducer", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "Afiliado",
+    "slug": "affiliate",
+    "externalIds": [
+      { "id": "5", "platform": "perfectpay" },
+      { "id": "affiliate", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "Marketplace",
+    "slug": "marketplace",
+    "externalIds": [
+      { "id": "1", "platform": "perfectpay" },
+      { "id": "marketplace", "platform": "hotmart" }
+    ]
+  },
+  {
+    "name": "Outros",
+    "slug": "others",
+    "externalIds": [
+      { "id": "others", "platform": "perfectpay" },
+      { "id": "others", "platform": "hotmart" }
+    ]
+  }
+]

@@ -8,10 +8,6 @@
       {
         "id": "none",
         "platform": "perfectpay"
-      },
-      {
-        "id": "STARTED",
-        "platform": "hotmart"
       }
     ]
   },
@@ -28,6 +24,14 @@
       {
         "id": "WAITING_PAYMENT",
         "platform": "hotmart"
+      },
+      {
+        "id": "STARTED",
+        "platform": "hotmart"
+      },
+      {
+        "id": 1,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -44,6 +48,10 @@
       {
         "id": "APPROVED",
         "platform": "hotmart"
+      },
+      {
+        "id": 2,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -60,6 +68,10 @@
       {
         "id": "PROCESSING_TRANSACTION",
         "platform": "hotmart"
+      },
+      {
+        "id": 3,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -76,6 +88,10 @@
       {
         "id": "BLOCKED",
         "platform": "hotmart"
+      },
+      {
+        "id": 4,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -92,6 +108,10 @@
       {
         "id": "CANCELLED",
         "platform": "hotmart"
+      },
+      {
+        "id": 5,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -108,6 +128,10 @@
       {
         "id": "CANCELLED",
         "platform": "hotmart"
+      },
+      {
+        "id": 6,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -124,6 +148,10 @@
       {
         "id": "REFUNDED",
         "platform": "hotmart"
+      },
+      {
+        "id": 7,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -140,6 +168,10 @@
       {
         "id": "APPROVED",
         "platform": "hotmart"
+      },
+      {
+        "id": 8,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -156,6 +188,10 @@
       {
         "id": "CHARGEBACK",
         "platform": "hotmart"
+      },
+      {
+        "id": 9,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -172,6 +208,10 @@
       {
         "id": "COMPLETE",
         "platform": "hotmart"
+      },
+      {
+        "id": 10,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -186,8 +226,8 @@
         "platform": "perfectpay"
       },
       {
-        "id": "OVERDUE",
-        "platform": "hotmart"
+        "id": 11,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -202,8 +242,8 @@
         "platform": "perfectpay"
       },
       {
-        "id": "PRINTED_BILLET",
-        "platform": "hotmart"
+        "id": 12,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -220,6 +260,10 @@
       {
         "id": "EXPIRED",
         "platform": "hotmart"
+      },
+      {
+        "id": 13,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -236,6 +280,10 @@
       {
         "id": "UNDER_ANALISYS",
         "platform": "hotmart"
+      },
+      {
+        "id": 16,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -248,6 +296,10 @@
       {
         "id": "NO_FUNDS",
         "platform": "hotmart"
+      },
+      {
+        "id": 5,
+        "platform": "perfectpay"
       }
     ]
   },
@@ -284,18 +336,10 @@
       {
         "id": "PRE_ORDER",
         "platform": "hotmart"
-      }
-    ]
-  },
-  {
-    "name": "protested",
-    "slug": "protested",
-    "description": "Protested payment",
-    "financialImpact": "neutro",
-    "externalIds": [
+      },
       {
-        "id": "PROTESTED",
-        "platform": "hotmart"
+        "id": 12,
+        "platform": "perfectpay"
       }
     ]
   }
